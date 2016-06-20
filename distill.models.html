@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>distill.models package &mdash; Distill 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Distill 1.0 documentation" href="index.html" />
+    <link rel="up" title="API" href="api.html" />
+    <link rel="next" title="distill.models.tests package" href="distill.models.tests.html" />
+    <link rel="prev" title="distill.deploy package" href="distill.deploy.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="distill-models-package">
+<h1>distill.models package<a class="headerlink" href="#distill-models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="distill.models.tests.html">distill.models.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="distill.models.tests.html#module-distill.models.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-distill.models.stout">
+<span id="distill-models-stout-module"></span><h2>distill.models.stout module<a class="headerlink" href="#module-distill.models.stout" title="Permalink to this headline">¶</a></h2>
+<p>distill: This package contains a flask app RESTful api for distill</p>
+<p>This flask app exposes some restful api endpoints for querying User-ALE. 
+Very similar to Lucene syntax for basic query operations.</p>
+<p>Copyright 2016, The Charles Stark Draper Laboratory
+Licensed under Apache Software License.</p>
+<dl class="class">
+<dt id="distill.models.stout.Stout">
+<em class="property">class </em><code class="descclassname">distill.models.stout.</code><code class="descname">Stout</code><a class="headerlink" href="#distill.models.stout.Stout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="distill.models.stout.Stout.ingest">
+<em class="property">static </em><code class="descname">ingest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.Stout.ingest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="distill.models.stout.StoutDoc">
+<em class="property">class </em><code class="descclassname">distill.models.stout.</code><code class="descname">StoutDoc</code><span class="sig-paren">(</span><em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">elasticsearch_dsl.document.DocType</span></code></p>
+<dl class="method">
+<dt id="distill.models.stout.StoutDoc.get_model_obj">
+<code class="descname">get_model_obj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.get_model_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="distill.models.stout.StoutDoc.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="distill.models.stout.StoutDoc.sync">
+<em class="property">classmethod </em><code class="descname">sync</code><span class="sig-paren">(</span><em>stout</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.sync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="distill.models.stout.parse">
+<code class="descclassname">distill.models.stout.</code><code class="descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-distill.models.userale">
+<span id="distill-models-userale-module"></span><h2>distill.models.userale module<a class="headerlink" href="#module-distill.models.userale" title="Permalink to this headline">¶</a></h2>
+<p>distill: This package contains a flask app RESTful api for distill</p>
+<p>This flask app exposes some restful api endpoints for querying User-ALE. 
+Very similar to Lucene syntax for basic query operations.</p>
+<p>Copyright 2016, The Charles Stark Draper Laboratory
+Licensed under Apache Software License.</p>
+<dl class="class">
+<dt id="distill.models.userale.UserAle">
+<em class="property">class </em><code class="descclassname">distill.models.userale.</code><code class="descname">UserAle</code><a class="headerlink" href="#distill.models.userale.UserAle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Get Status of Elasticsearch Instance, show all applications registered and the number
+of logs in each application (based on doc_type).
+Example:
+{</p>
+<blockquote>
+<div><p>&#8220;author&#8221; : &#8220;Michelle Beard&#8221;,
+&#8220;email&#8221; : &#8220;<a class="reference external" href="mailto:mbeard&#37;&#52;&#48;draper&#46;com">mbeard<span>&#64;</span>draper<span>&#46;</span>com</a>&#8221;,
+&#8220;name&#8221;: &#8220;Distill&#8221;,
+&#8220;status&#8221; : true,
+&#8220;version&#8221; : &#8220;1.0&#8221;,
+&#8220;apps&#8221; : {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;xdata_v3&#8221;</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">{</span><dd>testing: 205,
+parsed: 500,</dd>
+</dl>
+<p>},
+&#8220;test_app&#8221; : {</p>
+<blockquote>
+<div>logs: 500,
+parsed: 100,</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.delete">
+<em class="property">static </em><code class="descname">delete</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.denoise">
+<em class="property">static </em><code class="descname">denoise</code><span class="sig-paren">(</span><em>app</em>, <em>doc_type='parsed'</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.denoise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.getApps">
+<em class="property">static </em><code class="descname">getApps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.getApps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.getStatus">
+<em class="property">static </em><code class="descname">getStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.getStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.read">
+<em class="property">static </em><code class="descname">read</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.select">
+<em class="property">static </em><code class="descname">select</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.select" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.userale.UserAle.update">
+<em class="property">static </em><code class="descname">update</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="distill.models.userale.UserAleParsedDoc">
+<em class="property">class </em><code class="descclassname">distill.models.userale.</code><code class="descname">UserAleParsedDoc</code><span class="sig-paren">(</span><em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAleParsedDoc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">elasticsearch_dsl.document.DocType</span></code></p>
+<dl class="method">
+<dt id="distill.models.userale.UserAleParsedDoc.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAleParsedDoc.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="distill.models.userale.get_all_fields">
+<code class="descclassname">distill.models.userale.</code><code class="descname">get_all_fields</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.get_all_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="distill.models.userale.get_cluster_status">
+<code class="descclassname">distill.models.userale.</code><code class="descname">get_cluster_status</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.get_cluster_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="distill.models.userale.merge_dicts">
+<code class="descclassname">distill.models.userale.</code><code class="descname">merge_dicts</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.merge_dicts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="distill.models.userale.parse_mappings">
+<code class="descclassname">distill.models.userale.</code><code class="descname">parse_mappings</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.parse_mappings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="distill.models.userale.parse_query_parameters">
+<code class="descclassname">distill.models.userale.</code><code class="descname">parse_query_parameters</code><span class="sig-paren">(</span><em>indx</em>, <em>app_type=None</em>, <em>request_args={}</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.parse_query_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-distill.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-distill.models" title="Permalink to this headline">¶</a></h2>
+<p>distill: tests module.</p>
+<p>Meant for use with py.test.
+Organize tests into files, each named xxx_test.py
+Read more here: <a class="reference external" href="http://pytest.org/">http://pytest.org/</a></p>
+<p>Copyright 2016, The Charles Stark Draper Laboratory, Inc.
+Licensed under Apache Software License</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">distill.models package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-distill.models.stout">distill.models.stout module</a></li>
+<li><a class="reference internal" href="#module-distill.models.userale">distill.models.userale module</a></li>
+<li><a class="reference internal" href="#module-distill.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="api.html">API</a><ul>
+      <li>Previous: <a href="distill.deploy.html" title="previous chapter">distill.deploy package</a></li>
+      <li>Next: <a href="distill.models.tests.html" title="next chapter">distill.models.tests package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/distill.models.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Charles Stark Draper Laboratory.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/distill.models.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
