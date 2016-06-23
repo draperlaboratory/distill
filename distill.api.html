@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Documentation &mdash; Apache Distill 1.0 documentation</title>
+  <title>RESTful Endpoints &mdash; Apache Distill 1.0 alpha documentation</title>
   
 
   
@@ -30,9 +30,10 @@
   
 
   
-    <link rel="top" title="Apache Distill 1.0 documentation" href="index.html"/>
-        <link rel="next" title="distill.algorithms package" href="distill.algorithms.html"/>
-        <link rel="prev" title="Quickstart Guide" href="quickstart.html"/> 
+    <link rel="top" title="Apache Distill 1.0 alpha documentation" href="index.html"/>
+        <link rel="up" title="API Documentation" href="distill.html"/>
+        <link rel="next" title="Graph Analytics" href="distill.algorithms.html"/>
+        <link rel="prev" title="API Documentation" href="distill.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,20 +87,14 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-distill.app">Distill RESTful API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-distill.exceptions">Distill Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#distill-validation-library">Distill Validation Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-distill">Module contents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="distill.algorithms.html">distill.algorithms package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="distill.deploy.html">distill.deploy package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="distill.models.html">distill.models package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="distill.tests.html">distill.tests package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="distill.utils.html">distill.utils package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="distill.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="distill.html#distill-http-client">Distill HTTP Client</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RESTful Endpoints</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-analytics">Distill Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-models">Distill Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-utilities">Distill Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -137,11 +132,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>API Documentation</li>
+          <li><a href="distill.html">API Documentation</a> &raquo;</li>
+      
+    <li>RESTful Endpoints</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/api.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/distill.api.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -151,10 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="api-documentation">
-<span id="api"></span><h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-distill.app">
-<span id="distill-restful-api"></span><h2>Distill RESTful API<a class="headerlink" href="#module-distill.app" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-distill.app">
+<span id="restful-endpoints"></span><h1>RESTful Endpoints<a class="headerlink" href="#module-distill.app" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="distill.app.create">
 <code class="descclassname">distill.app.</code><code class="descname">create</code><span class="sig-paren">(</span><em>app_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.create" title="Permalink to this definition">¶</a></dt>
@@ -379,126 +374,6 @@ it will return an error message.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-distill.exceptions">
-<span id="distill-exceptions"></span><h2>Distill Exceptions<a class="headerlink" href="#module-distill.exceptions" title="Permalink to this headline">¶</a></h2>
-<p>distill: This package contains a flask app RESTful api for distill</p>
-<p>This flask app exposes some restful api endpoints for querying User-ALE. 
-Very similar to Lucene syntax for basic query operations.</p>
-<p>Copyright 2016, The Charles Stark Draper Laboratory
-Licensed under Apache Software License.</p>
-<dl class="exception">
-<dt id="distill.exceptions.ValidationError">
-<em class="property">exception </em><code class="descclassname">distill.exceptions.</code><code class="descname">ValidationError</code><a class="headerlink" href="#distill.exceptions.ValidationError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
-</dd></dl>
-
-</div>
-<div class="section" id="distill-validation-library">
-<h2>Distill Validation Library<a class="headerlink" href="#distill-validation-library" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-distill.validation"></span><p>distill: This package contains a flask app RESTful api for distill</p>
-<p>This flask app exposes some restful api endpoints for querying User-ALE. 
-Very similar to Lucene syntax for basic query operations.</p>
-<p>Copyright 2016, The Charles Stark Draper Laboratory
-Licensed under Apache Software License.</p>
-<dl class="function">
-<dt id="distill.validation.str2bool">
-<code class="descclassname">distill.validation.</code><code class="descname">str2bool</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.validation.str2bool" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="distill.validation.validate_request">
-<code class="descclassname">distill.validation.</code><code class="descname">validate_request</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.validation.validate_request" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-distill">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-distill" title="Permalink to this headline">¶</a></h2>
-<p>Distill: This package contains a flask app RESTful api for distill</p>
-<p>Copyright 2016, The Charles Stark Draper Laboratory
-Licensed under Apache Software License.</p>
-</div>
-<div class="section" id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="distill.algorithms.html">distill.algorithms package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="distill.algorithms.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="distill.algorithms.graphs.html">distill.algorithms.graphs package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="distill.algorithms.graphs.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="distill.algorithms.graphs.tests.html">distill.algorithms.graphs.tests package</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="distill.algorithms.graphs.tests.html#module-distill.algorithms.graphs.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="distill.algorithms.graphs.html#module-distill.algorithms.graphs">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="distill.algorithms.stats.html">distill.algorithms.stats package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="distill.algorithms.stats.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="distill.algorithms.stats.tests.html">distill.algorithms.stats.tests package</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="distill.algorithms.stats.tests.html#module-distill.algorithms.stats.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="distill.algorithms.stats.html#module-distill.algorithms.stats">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="distill.algorithms.tests.html">distill.algorithms.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="distill.algorithms.tests.html#module-distill.algorithms.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="distill.algorithms.html#module-distill.algorithms">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="distill.deploy.html">distill.deploy package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="distill.deploy.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.deploy.html#module-distill.deploy.run_server">distill.deploy.run_server module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.deploy.html#module-distill.deploy">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="distill.models.html">distill.models package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="distill.models.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="distill.models.tests.html">distill.models.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="distill.models.tests.html#module-distill.models.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="distill.models.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.models.html#module-distill.models.stout">distill.models.stout module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.models.html#module-distill.models.userale">distill.models.userale module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.models.html#module-distill.models">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="distill.tests.html">distill.tests package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="distill.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.tests.html#module-distill.tests.basic_test">distill.tests.basic_test module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.tests.html#module-distill.tests.distill_test">distill.tests.distill_test module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.tests.html#module-distill.tests">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="distill.utils.html">distill.utils package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="distill.utils.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="distill.utils.tests.html">distill.utils.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="distill.utils.tests.html#module-distill.utils.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="distill.utils.html#module-distill.utils">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
 
 
            </div>
@@ -507,10 +382,10 @@ Licensed under Apache Software License.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="distill.algorithms.html" class="btn btn-neutral float-right" title="distill.algorithms package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="distill.algorithms.html" class="btn btn-neutral float-right" title="Graph Analytics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="quickstart.html" class="btn btn-neutral" title="Quickstart Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="distill.html" class="btn btn-neutral" title="API Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -541,7 +416,7 @@ Licensed under Apache Software License.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0',
+            VERSION:'1.0 alpha',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Stout Interface &mdash; Apache Distill 1.0 alpha documentation</title>
+  <title>Brew Interface &mdash; Apache Distill 1.0 alpha documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
     <link rel="top" title="Apache Distill 1.0 alpha documentation" href="index.html"/>
         <link rel="up" title="API Documentation" href="distill.html"/>
-        <link rel="next" title="Run Server" href="distill.deploy.html"/>
+        <link rel="next" title="Utilities Library" href="distill.utils.html"/>
         <link rel="prev" title="Graph Analytics" href="distill.algorithms.html"/> 
 
   
@@ -88,16 +88,14 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="distill.html">API Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="distill.html#module-distill.app">Distill RESTful API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#module-distill.exceptions">Distill Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#module-distill.validation">Distill Validation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-http-client">Distill HTTP Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distill.html#distill-analytics">Distill Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="distill.html#distill-models">Distill Models</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Stout Interface</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Brew Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-distill.models.stout">Stout Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-distill.models.userale">UserAle Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-deploy">Distill Deploy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distill.html#distill-utilities">Distill Utilities</a></li>
 </ul>
 </li>
@@ -138,7 +136,7 @@
       
           <li><a href="distill.html">API Documentation</a> &raquo;</li>
       
-    <li>Stout Interface</li>
+    <li>Brew Interface</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -152,13 +150,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-distill.models.stout">
+  <div class="section" id="module-distill.models.brew">
+<span id="brew-interface"></span><h1>Brew Interface<a class="headerlink" href="#module-distill.models.brew" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="distill.models.brew.Brew">
+<em class="property">class </em><code class="descclassname">distill.models.brew.</code><code class="descname">Brew</code><a class="headerlink" href="#distill.models.brew.Brew" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Distill supports basic CRUD operations and publishes the status
+of an persistenct database. Eventually it will support ingesting logs sent from
+an registered application.</p>
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new application in Distill</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="s2">&quot;application&quot;</span> : <span class="s2">&quot;xdata_v3&quot;</span>,
+        <span class="s2">&quot;health&quot;</span> : <span class="s2">&quot;green&quot;</span>,
+        <span class="s2">&quot;num_docs&quot;</span> : 0,
+        <span class="s2">&quot;status&quot;</span> : <span class="s2">&quot;open&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; [string] application name (e.g. xdata_v3)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[dict] dictionary of application and its meta information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.delete">
+<em class="property">static </em><code class="descname">delete</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Technically closes the index so its content is not searchable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; [string] application name (e.g. xdata_v3)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[dict] status message of the event</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.get_applications">
+<em class="property">static </em><code class="descname">get_applications</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.get_applications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch all the registered applications in Distill.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Private indexes starting with a period are not included in the result set</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[dict] dictionary of all registered applications and meta information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.get_status">
+<em class="property">static </em><code class="descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch the status of the underlying database instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[bool] if connection to database instance has been established</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.read">
+<em class="property">static </em><code class="descname">read</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch meta data associated with an application</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Example:
+<span class="o">{</span>
+        <span class="s2">&quot;application&quot;</span> : <span class="s2">&quot;xdata_v3&quot;</span>,
+        <span class="s2">&quot;health&quot;</span> : <span class="s2">&quot;green&quot;</span>,
+        <span class="s2">&quot;num_docs&quot;</span> : <span class="s2">&quot;100&quot;</span>,
+        <span class="s2">&quot;status&quot;</span> : <span class="s2">&quot;open&quot;</span>
+        <span class="s2">&quot;types&quot;</span> : <span class="o">{</span>
+                <span class="s2">&quot;raw_logs&quot;</span> : <span class="o">{</span>
+                        <span class="s2">&quot;@timestamp&quot;</span> : <span class="s2">&quot;date&quot;</span>,
+                        <span class="s2">&quot;action&quot;</span> : <span class="s2">&quot;string&quot;</span>,
+                        <span class="s2">&quot;elementId&quot;</span> : <span class="s2">&quot;string&quot;</span>
+                <span class="o">}</span>,
+                <span class="s2">&quot;parsed&quot;</span> : <span class="o">{</span>
+                        <span class="s2">&quot;@timestamp&quot;</span> : <span class="s2">&quot;date&quot;</span>,
+                        <span class="s2">&quot;elementId_interval&quot;</span> : <span class="s2">&quot;string&quot;</span>
+                <span class="o">}</span>,
+                <span class="s2">&quot;graph&quot;</span> : <span class="o">{</span>
+                        <span class="s2">&quot;uniqueID&quot;</span> : <span class="s2">&quot;string&quot;</span>,
+                        <span class="s2">&quot;transition_count&quot;</span> : <span class="s2">&quot;long&quot;</span>,
+                        <span class="s2">&quot;p_value&quot;</span> : <span class="s2">&quot;float&quot;</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; [string] application name (e.g. xdata_v3)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[dict] dictionary of application and its meta information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.models.brew.Brew.update">
+<em class="property">static </em><code class="descname">update</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.update" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Currently  not implemented</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-distill.models.stout">
 <span id="stout-interface"></span><h1>Stout Interface<a class="headerlink" href="#module-distill.models.stout" title="Permalink to this headline">¶</a></h1>
-<p>distill: This package contains a flask app RESTful api for distill</p>
-<p>This flask app exposes some restful api endpoints for querying User-ALE. 
-Very similar to Lucene syntax for basic query operations.</p>
-<p>Copyright 2016, The Charles Stark Draper Laboratory
-Licensed under Apache Software License.</p>
 <dl class="class">
 <dt id="distill.models.stout.Stout">
 <em class="property">class </em><code class="descclassname">distill.models.stout.</code><code class="descname">Stout</code><a class="headerlink" href="#distill.models.stout.Stout" title="Permalink to this definition">¶</a></dt>
@@ -203,104 +330,48 @@ Licensed under Apache Software License.</p>
 <dt id="distill.models.userale.UserAle">
 <em class="property">class </em><code class="descclassname">distill.models.userale.</code><code class="descname">UserAle</code><a class="headerlink" href="#distill.models.userale.UserAle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Generic class supporting basic CRUD operations</p>
-<dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.create" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.delete">
-<em class="property">static </em><code class="descname">delete</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.delete" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>Main method of entry to perform segmentation and integration of STOUT&#8217;s master
+answer table (if STOUT is enabled). Advanced and basic analytics is performed in the
+distill.algorithms.stats and distill.algorithms.graphs module.</p>
 <dl class="staticmethod">
 <dt id="distill.models.userale.UserAle.denoise">
-<em class="property">static </em><code class="descname">denoise</code><span class="sig-paren">(</span><em>app</em>, <em>doc_type='parsed'</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.denoise" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">denoise</code><span class="sig-paren">(</span><em>app</em>, <em>app_type='parsed'</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.denoise" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.getApps">
-<em class="property">static </em><code class="descname">getApps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.getApps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fetch all the registered applications for an Elasticsearch instance.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Privated indexes starting with a period are not included in the result set.</p>
-</div>
+<dt id="distill.models.userale.UserAle.search">
+<em class="property">static </em><code class="descname">search</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>filters=[]</em>, <em>size=100</em>, <em>include='*'</em>, <em>scroll=None</em>, <em>sort_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a search query.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>app</strong> &#8211; [string] application id (e.g. &#8220;xdata_v3&#8221;)</li>
+<li><strong>app_type</strong> &#8211; [string] name of the application type. If None all application types are searched.</li>
+<li><strong>filters</strong> &#8211; [list of strings] list of filters for a query.</li>
+<li><strong>size</strong> &#8211; [int] maximum number of hits that should be returned</li>
+<li><strong>sort_field</strong> &#8211; [string] sorting field. Currently supported fields: &#8220;timestamp&#8221;, &#8220;date&#8221;</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.getStatus">
-<em class="property">static </em><code class="descname">getStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.getStatus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fetch the status of an Elasticsearch instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True/False if connection to Elasticsearch instance has been established.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[dict] dictionary with processed results. If STOUT is enabled, STOUT data will be merged with final result.</p>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
-
-<dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.read">
-<em class="property">static </em><code class="descname">read</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.read" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="staticmethod">
 <dt id="distill.models.userale.UserAle.select">
 <em class="property">static </em><code class="descname">select</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.select" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.update">
-<em class="property">static </em><code class="descname">update</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="distill.models.userale.UserAleParsedDoc">
-<em class="property">class </em><code class="descclassname">distill.models.userale.</code><code class="descname">UserAleParsedDoc</code><span class="sig-paren">(</span><em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAleParsedDoc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">elasticsearch_dsl.document.DocType</span></code></p>
-<dl class="method">
-<dt id="distill.models.userale.UserAleParsedDoc.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAleParsedDoc.save" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="distill.models.userale.get_all_fields">
-<code class="descclassname">distill.models.userale.</code><code class="descname">get_all_fields</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.get_all_fields" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="distill.models.userale.get_cluster_status">
-<code class="descclassname">distill.models.userale.</code><code class="descname">get_cluster_status</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.get_cluster_status" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="function">
 <dt id="distill.models.userale.merge_dicts">
 <code class="descclassname">distill.models.userale.</code><code class="descname">merge_dicts</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.merge_dicts" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="distill.models.userale.parse_mappings">
-<code class="descclassname">distill.models.userale.</code><code class="descname">parse_mappings</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.parse_mappings" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -317,7 +388,7 @@ Licensed under Apache Software License.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="distill.deploy.html" class="btn btn-neutral float-right" title="Run Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="distill.utils.html" class="btn btn-neutral float-right" title="Utilities Library" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="distill.algorithms.html" class="btn btn-neutral" title="Graph Analytics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
