@@ -83,9 +83,8 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-distill-in-an-development-environment">Installing Distill in an Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-distill">Installing Distill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-distill-in-an-virtual-environment">Installing Distill in an Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-and-testing">Development and Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deployment">Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-documentation">Installing Documentation</a></li>
 </ul>
@@ -145,8 +144,8 @@
             
   <div class="section" id="installation-guide">
 <span id="installation"></span><h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installing-distill-in-an-development-environment">
-<h2>Installing Distill in an Development Environment<a class="headerlink" href="#installing-distill-in-an-development-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-distill">
+<h2>Installing Distill<a class="headerlink" href="#installing-distill" title="Permalink to this headline">¶</a></h2>
 <p>The first step is to install Distill. First, checkout the latest version of Distill.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/draperlaboratory/distill.git
 </pre></div>
@@ -159,7 +158,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install distill
 </pre></div>
 </div>
-<p>Advanced users can install Distill in a virtualenv if they wish. Instructions to setup an virtual environment will be explained below.</p>
+<p>Users are strongly recommended to install Distill in a virtualenv. Instructions to setup an virtual environment will be explained below.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">When the package is installed via <code class="docutils literal"><span class="pre">easy_install</span></code> or <code class="docutils literal"><span class="pre">pip</span></code> this function will be bound to the <code class="docutils literal"><span class="pre">distill</span></code> executable in the Python installation&#8217;s <code class="docutils literal"><span class="pre">bin</span></code> directory (on Windows - the <code class="docutils literal"><span class="pre">Scripts</span></code> directory).</p>
@@ -167,17 +166,34 @@
 </div>
 <div class="section" id="installing-distill-in-an-virtual-environment">
 <h2>Installing Distill in an Virtual Environment<a class="headerlink" href="#installing-distill-in-an-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>TODO</div></blockquote>
-</div>
-<div class="section" id="development-and-testing">
-<h2>Development and Testing<a class="headerlink" href="#development-and-testing" title="Permalink to this headline">¶</a></h2>
-<p>To build the source code and run all unit tests.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python setup.py develop test
+<p>virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that the Distill project would need.</p>
+<p>Install virtualenv via pip:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo pip install virtualenv
 </pre></div>
 </div>
-<p>To start up a local web server, running on localhost:8090.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ dev
+<p>Start by changing directory into the root of Distill&#8217;s project directory, and then use the virtualenv command-line tool to create a new environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir env
+$ virtualenv env
+</pre></div>
+</div>
+<p>Activate environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ source env/bin/activate
+</pre></div>
+</div>
+<p>Install Distill requirements:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ env/bin/pip -r requirements.txt
+</pre></div>
+</div>
+<p>To build the source code and run all unit tests.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ env/bin/python setup.py develop test
+</pre></div>
+</div>
+<p>Launch local Distill server, running on localhost:8090:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ env/bin/dev
+</pre></div>
+</div>
+<p>Deactivate environment</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ deactivate
 </pre></div>
 </div>
 </div>
@@ -197,7 +213,7 @@ $ sudo apt-get install -y python python-pip nginx gunicorn
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/draperlaboratory/distill.git /home/public_html
 </pre></div>
 </div>
-<p>Install Distill&#8217;s requirements.</p>
+<p>Install Distill&#8217;s requirements either globally or in a virutal environment:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
 </pre></div>
 </div>

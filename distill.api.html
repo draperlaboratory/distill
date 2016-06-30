@@ -154,7 +154,7 @@
 <dt id="distill.app.create">
 <code class="descclassname">distill.app.</code><code class="descname">create</code><span class="sig-paren">(</span><em>app_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers an application in Distill.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST https://localhost:8000/xdata_v3
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST https://localhost:8090/xdata_v3
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -173,7 +173,7 @@
 <dt id="distill.app.delete">
 <code class="descclassname">distill.app.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>app_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes an application permentantly from Distill</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XDELETE https://localhost:8000/xdata_v3
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XDELETE https://localhost:8090/xdata_v3
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -195,7 +195,7 @@
 will be stored with new log created unless specified in the request. Have option to save 
 parsed results back to data store. These parsed logs can be intergrated with STOUT results 
 by running the stout bootstrap script.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8000/denoise/xdata_v3?save<span class="o">=</span>true<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>parsed
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8090/denoise/xdata_v3?save<span class="o">=</span>true<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>parsed
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -204,7 +204,7 @@ by running the stout bootstrap script.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app_id</strong> &#8211; Application name</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">JSON blob of status</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[dict]</td>
 </tr>
 </tbody>
 </table>
@@ -214,7 +214,7 @@ by running the stout bootstrap script.</p>
 <dt id="distill.app.index">
 <code class="descclassname">distill.app.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show Distill version information, connection status, and all registered applications.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8000
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8090
 
 <span class="o">{</span>
         <span class="s2">&quot;author&quot;</span> : <span class="s2">&quot;Michelle Beard&quot;</span>,
@@ -253,7 +253,7 @@ This will save the merged results back to ES instance at new index stout
 OR denoise data first, then merge with the stout index...
 If STOUT is enabled, the select method expects a stout index to exist or otherwise 
 it will return an error message.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://locahost:8000/stout/xdata_v3
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://locahost:8090/stout/xdata_v3
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -303,12 +303,8 @@ it will return an error message.</p>
 <dl class="function">
 <dt id="distill.app.stat">
 <code class="descclassname">distill.app.</code><code class="descname">stat</code><span class="sig-paren">(</span><em>app_id</em>, <em>app_type</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.stat" title="Permalink to this definition">¶</a></dt>
-<dd><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Not implemented/available</p>
-</div>
-<p>Generic histogram counts for a single registered application filtered optionally by document type.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8000/xdata_v3/testing/?elem<span class="o">=</span>signup<span class="p">&amp;</span><span class="nv">event</span><span class="o">=</span>click
+<dd><p>Generic histogram counts for a single registered application filtered optionally by document type.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8090/stat/xdata_v3/testing/?measure<span class="o">=</span>terms<span class="p">&amp;</span><span class="nv">elem</span><span class="o">=</span>signup<span class="p">&amp;</span><span class="nv">event</span><span class="o">=</span>click
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -332,7 +328,7 @@ it will return an error message.</p>
 <dt id="distill.app.status">
 <code class="descclassname">distill.app.</code><code class="descname">status</code><span class="sig-paren">(</span><em>app_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Presents meta information about an registered application, including field names and document types.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8000/status/xdata_v3
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XGET https://localhost:8090/status/xdata_v3
 
 <span class="o">{</span>
   <span class="s2">&quot;application&quot;</span>: <span class="s2">&quot;xdata_v3&quot;</span>,
@@ -358,7 +354,7 @@ it will return an error message.</p>
 <dt id="distill.app.update">
 <code class="descclassname">distill.app.</code><code class="descname">update</code><span class="sig-paren">(</span><em>app_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.app.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames a specific application</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST https://localhost:8000/update/xdata_v3?name<span class="o">=</span><span class="s2">&quot;xdata_v4&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST https://localhost:8090/update/xdata_v3?name<span class="o">=</span><span class="s2">&quot;xdata_v4&quot;</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">

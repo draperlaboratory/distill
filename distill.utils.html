@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Utilities Library &mdash; Apache Distill 1.0 alpha documentation</title>
+  <title>Query Builder &mdash; Apache Distill 1.0 alpha documentation</title>
   
 
   
@@ -92,9 +92,9 @@
 <li class="toctree-l2"><a class="reference internal" href="distill.html#distill-analytics">Distill Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distill.html#distill-models">Distill Models</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="distill.html#distill-utilities">Distill Utilities</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Utilities Library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-distill.validation">Validation Library</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Query Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-distill.utils.exceptions">Exception Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-distill.utils.validation">Validation Library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-distill.deploy.run_server">Run Server</a></li>
 </ul>
 </li>
@@ -137,7 +137,7 @@
       
           <li><a href="distill.html">API Documentation</a> &raquo;</li>
       
-    <li>Utilities Library</li>
+    <li>Query Builder</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -151,17 +151,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-distill.utils">
-<span id="utilities-library"></span><h1>Utilities Library<a class="headerlink" href="#module-distill.utils" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-distill.utils.query_builder">
+<span id="query-builder"></span><h1>Query Builder<a class="headerlink" href="#module-distill.utils.query_builder" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="distill.utils.query_builder.QueryBuilder">
+<em class="property">class </em><code class="descclassname">distill.utils.query_builder.</code><code class="descname">QueryBuilder</code><span class="sig-paren">(</span><em>query=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.query_builder.QueryBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="distill.utils.query_builder.QueryBuilder.add_filters">
+<code class="descname">add_filters</code><span class="sig-paren">(</span><em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.query_builder.QueryBuilder.add_filters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="distill.utils.query_builder.QueryBuilder.add_sorting">
+<code class="descname">add_sorting</code><span class="sig-paren">(</span><em>sort_field=''</em>, <em>sort_order=''</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.query_builder.QueryBuilder.add_sorting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="exception-handling">
-<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-distill.utils.exceptions">
+<span id="exception-handling"></span><h1>Exception Handling<a class="headerlink" href="#module-distill.utils.exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="distill.utils.exceptions.Error">
+<em class="property">exception </em><code class="descclassname">distill.utils.exceptions.</code><code class="descname">Error</code><a class="headerlink" href="#distill.utils.exceptions.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Base class for exceptions.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="distill.utils.exceptions.ValidationError">
+<em class="property">exception </em><code class="descclassname">distill.utils.exceptions.</code><code class="descname">ValidationError</code><span class="sig-paren">(</span><em>url</em>, <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.exceptions.ValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#distill.utils.exceptions.Error" title="distill.utils.exceptions.Error"><code class="xref py py-class docutils literal"><span class="pre">distill.utils.exceptions.Error</span></code></a></p>
+<p>Exceptions raised for errors in validated a url.</p>
+</dd></dl>
+
 </div>
-<div class="section" id="module-distill.validation">
-<span id="validation-library"></span><h1>Validation Library<a class="headerlink" href="#module-distill.validation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-distill.utils.validation">
+<span id="validation-library"></span><h1>Validation Library<a class="headerlink" href="#module-distill.utils.validation" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="distill.validation.str2bool">
-<code class="descclassname">distill.validation.</code><code class="descname">str2bool</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.validation.str2bool" title="Permalink to this definition">¶</a></dt>
+<dt id="distill.utils.validation.str2bool">
+<code class="descclassname">distill.utils.validation.</code><code class="descname">str2bool</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.validation.str2bool" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert string expression to boolean</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -178,8 +208,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="distill.validation.validate_request">
-<code class="descclassname">distill.validation.</code><code class="descname">validate_request</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.validation.validate_request" title="Permalink to this definition">¶</a></dt>
+<dt id="distill.utils.validation.validate_request">
+<code class="descclassname">distill.utils.validation.</code><code class="descname">validate_request</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.utils.validation.validate_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse out request message and validate inputs</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

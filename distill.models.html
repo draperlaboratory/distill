@@ -32,7 +32,7 @@
   
     <link rel="top" title="Apache Distill 1.0 alpha documentation" href="index.html"/>
         <link rel="up" title="API Documentation" href="distill.html"/>
-        <link rel="next" title="Utilities Library" href="distill.utils.html"/>
+        <link rel="next" title="Query Builder" href="distill.utils.html"/>
         <link rel="prev" title="Graph Analytics" href="distill.algorithms.html"/> 
 
   
@@ -290,10 +290,12 @@ an registered application.</p>
 <dt id="distill.models.stout.Stout">
 <em class="property">class </em><code class="descclassname">distill.models.stout.</code><code class="descname">Stout</code><a class="headerlink" href="#distill.models.stout.Stout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Main Stout class to support ingest and search operations.</p>
 <dl class="staticmethod">
 <dt id="distill.models.stout.Stout.ingest">
 <em class="property">static </em><code class="descname">ingest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.Stout.ingest" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ingest data coming from Stout to Distill</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -301,27 +303,14 @@ an registered application.</p>
 <dt id="distill.models.stout.StoutDoc">
 <em class="property">class </em><code class="descclassname">distill.models.stout.</code><code class="descname">StoutDoc</code><span class="sig-paren">(</span><em>meta=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">elasticsearch_dsl.document.DocType</span></code></p>
-<dl class="method">
-<dt id="distill.models.stout.StoutDoc.get_model_obj">
-<code class="descname">get_model_obj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.get_model_obj" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>Representation of a Stout documentat.</p>
 <dl class="method">
 <dt id="distill.models.stout.StoutDoc.save">
 <code class="descname">save</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.save" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="classmethod">
-<dt id="distill.models.stout.StoutDoc.sync">
-<em class="property">classmethod </em><code class="descname">sync</code><span class="sig-paren">(</span><em>stout</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.StoutDoc.sync" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dd><p>Save data from parsing as a Stout document in Distill</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="distill.models.stout.parse">
-<code class="descclassname">distill.models.stout.</code><code class="descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.stout.parse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-distill.models.userale">
@@ -388,7 +377,7 @@ distill.algorithms.stats and distill.algorithms.graphs module.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="distill.utils.html" class="btn btn-neutral float-right" title="Utilities Library" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="distill.utils.html" class="btn btn-neutral float-right" title="Query Builder" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="distill.algorithms.html" class="btn btn-neutral" title="Graph Analytics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
