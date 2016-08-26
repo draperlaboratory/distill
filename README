@@ -1,0 +1,20 @@
+Distill has become a component of Apache SensSoft -- an official Apache
+Incubator project.
+
+The new official repository is now:
+
+  https://git-wip-us.apache.org/repos/asf/incubator-senssoft-distill.git
+
+This is mirrored to Github at:
+
+  https://github.com/apache/incubator-senssoft-distill
+
+The Distill website currently remains at:
+
+  http://draperlaboratory.github.io/distill
+
+But will soon be moved to:
+
+  http://senssoft.incubator.apache.org
+
+- August 2016
