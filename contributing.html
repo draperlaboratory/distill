@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Apache Distill 0.1.3 documentation</title>
+  <title>Contributing to Apache Distill &mdash; Apache Distill 0.1.3 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="Apache Distill 0.1.3 documentation" href="index.html"/>
-        <link rel="next" title="License" href="license.html"/>
-        <link rel="prev" title="Contributing to Apache Distill" href="contributing.html"/> 
+        <link rel="next" title="Changelog" href="changelog.html"/>
+        <link rel="prev" title="Authors" href="authors.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -90,14 +90,8 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Apache Distill</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.3 (2016-09-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.2 (2016-07-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.1 (2016-06-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.0 (2016-04-01)</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to Apache Distill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -129,11 +123,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Changelog</li>
+    <li>Contributing to Apache Distill</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/changelog.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/contributing.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -143,39 +137,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="changelog">
-<span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>0.1.3 (2016-09-19)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Moved to Apache.</li>
-<li>Updated all documentation.</li>
-<li>Added License headers</li>
-<li>Docker compose file added to assist deployment of ELK stack with Distill</li>
-</ul>
+  <div class="section" id="contributing-to-apache-distill">
+<span id="contributing"></span><h1>Contributing to Apache Distill<a class="headerlink" href="#contributing-to-apache-distill" title="Permalink to this headline">¶</a></h1>
+<p>Thank you for contributing to the Apache Distill project!</p>
+<p>There are certain procedures that must be followed for all contributions. These
+procedures are necessary to allow us to allocate resources for reviewing and
+testing your contribution, as well as to communicate effectively with you during
+the review process.</p>
+<ol class="arabic">
+<li><p class="first">Create an issue in JIRA</p>
+<blockquote>
+<div><p>All changes to Apache Distill must have a corresponding issue in JIRA so the
+change can be properly tracked:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://issues.apache.org/jira/browse/senssoft">https://issues.apache.org/jira/browse/senssoft</a></p>
+</div></blockquote>
+<p>If you do not already have an account on JIRA, you will need to create
+before creating your new issue.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Make and test your changes locally</p>
+<blockquote>
+<div><p>The Apache Distill source is maintained in a git repository hosted on Apache:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://git-wip-us.apache.org/repos/asf/incubator-senssoft-distill.git">https://git-wip-us.apache.org/repos/asf/incubator-senssoft-distill.git</a></p>
+</div></blockquote>
+<p>To make your changes, fork the repository and make commits
+to a topic branch in your fork. Commits should be made in logical units
+and must reference the JIRA issue number:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git commit -m &quot;#SENSSOFT-123: #High-level message describing the changes.&quot;
+</pre></div>
 </div>
-<div class="section" id="id3">
-<h2>0.1.2 (2016-07-22)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Moved CRUD operations from UserAle model to Brew model.</li>
-<li>Added API specs to segment UserAle data from Elasticsearch</li>
-<li>Added deployment instructions</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h2>0.1.1 (2016-06-14)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Completed index route for status endpoint which lists all applications registered and their document count segmented by type.</li>
-<li>Updated setup.py to reference deploy scripts</li>
-<li>Example configuration to deploy Distll with Gunicorn and Nginx for Linux/Mac users</li>
-<li>Added UserAle and Stout classes.</li>
-<li>Updated requirements.txt for deployment.</li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h2>0.1.0 (2016-04-01)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>Initial release.</p>
-</div>
+<p>Avoid commits which cover multiple, distinct goals that could (and should)
+be handled separately.</p>
+<p>If you do not already have an account on JIRA, you will need to create
+one before making your changes.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Submit your changes via a pull request on Git</p>
+<blockquote>
+<div><p>Once your changes are ready, submit them by creating a pull request for
+the corresponding topic branch you created when you began working on your
+changes.</p>
+<p>The Apache Distill team will then review your changes and, if they pass review,
+your changes will be merged.</p>
+</div></blockquote>
+</li>
+</ol>
 </div>
 
 
@@ -185,10 +193,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="contributing.html" class="btn btn-neutral" title="Contributing to Apache Distill" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="authors.html" class="btn btn-neutral" title="Authors" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

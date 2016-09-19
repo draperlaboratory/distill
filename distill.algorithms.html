@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph Analytics &mdash; Apache Distill 1.0 alpha documentation</title>
+  <title>Graph Analytics &mdash; Apache Distill 0.1.3 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Apache Distill 1.0 alpha documentation" href="index.html"/>
+    <link rel="top" title="Apache Distill 0.1.3 documentation" href="index.html"/>
         <link rel="up" title="API Documentation" href="distill.html"/>
         <link rel="next" title="Brew Interface" href="distill.models.html"/>
         <link rel="prev" title="RESTful Endpoints" href="distill.api.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.0
+                0.1.3
               </div>
             
           
@@ -88,20 +88,21 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="distill.html">API Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-http-client">Distill HTTP Client</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="distill.html#distill-analytics">Distill Analytics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-http-client">Apache Distill HTTP Client</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="distill.html#apache-distill-analytics">Apache Distill Analytics</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Graph Analytics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-distill.algorithms.stats.stats">Statistics Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-distill.algorithms.stats.hist">Statistics Package</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-models">Distill Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-utilities">Distill Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-models">Apache Distill Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-utilities">Apache Distill Utilities</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Distill Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Apache Distill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -165,18 +166,58 @@ Stout.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-distill.algorithms.stats.stats">
-<span id="statistics-package"></span><h1>Statistics Package<a class="headerlink" href="#module-distill.algorithms.stats.stats" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-distill.algorithms.stats.hist">
+<span id="statistics-package"></span><h1>Statistics Package<a class="headerlink" href="#module-distill.algorithms.stats.hist" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="distill.algorithms.stats.stats.Stats">
-<em class="property">class </em><code class="descclassname">distill.algorithms.stats.stats.</code><code class="descname">Stats</code><a class="headerlink" href="#distill.algorithms.stats.stats.Stats" title="Permalink to this definition">¶</a></dt>
+<dt id="distill.algorithms.stats.hist.Hist">
+<em class="property">class </em><code class="descclassname">distill.algorithms.stats.hist.</code><code class="descname">Hist</code><a class="headerlink" href="#distill.algorithms.stats.hist.Hist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Distill&#8217;s statistics package. Apply statistical algorithms to User Ale log data segmented with
-Stout.</p>
-<dl class="staticmethod">
-<dt id="distill.algorithms.stats.stats.Stats.foo">
-<em class="property">static </em><code class="descname">foo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.algorithms.stats.stats.Stats.foo" title="Permalink to this definition">¶</a></dt>
+Stout. Need to query/filter by session or user id.</p>
+<dl class="method">
+<dt id="distill.algorithms.stats.hist.Hist.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distill.algorithms.stats.hist.Hist.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.algorithms.stats.hist.Hist.histogram">
+<em class="property">static </em><code class="descname">histogram</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>q=''</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.algorithms.stats.hist.Hist.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only works on numerical data.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.algorithms.stats.hist.Hist.terms">
+<em class="property">static </em><code class="descname">terms</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>q=''</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.algorithms.stats.hist.Hist.terms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group by field (find all elements )</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="distill.algorithms.stats.hist.Hist.unique_terms">
+<em class="property">static </em><code class="descname">unique_terms</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>q=''</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.algorithms.stats.hist.Hist.unique_terms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate the number of unique terms in a field. Missing values are counted and marked as &#8220;N/A&#8221;.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Need to incorporate QueryBuilder library instead of manually generating queries.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>app</strong> &#8211; [string] application name</li>
+<li><strong>app_type</strong> &#8211; [string] application type</li>
+<li><strong>field</strong> &#8211; [string] field to search against for unique values</li>
+<li><strong>size</strong> &#8211; [int] the top size terms returned in the result. Default value is 10.</li>
+<li><strong>min_hits</strong> &#8211; [int] return tags which have been found in min_hits or more. Default value is 1.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[dict] dictionary of results</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -201,7 +242,7 @@ Stout.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, The Charles Stark Draper Laboratory Licensed under Apache Software License..
+        &copy; Copyright 2016, Apache Software License.
 
     </p>
   </div>
@@ -223,7 +264,7 @@ Stout.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0 alpha',
+            VERSION:'0.1.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Brew Interface &mdash; Apache Distill 1.0 alpha documentation</title>
+  <title>Brew Interface &mdash; Apache Distill 0.1.3 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Apache Distill 1.0 alpha documentation" href="index.html"/>
+    <link rel="top" title="Apache Distill 0.1.3 documentation" href="index.html"/>
         <link rel="up" title="API Documentation" href="distill.html"/>
         <link rel="next" title="Query Builder" href="distill.utils.html"/>
         <link rel="prev" title="Graph Analytics" href="distill.algorithms.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.0
+                0.1.3
               </div>
             
           
@@ -88,21 +88,22 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="distill.html">API Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-http-client">Distill HTTP Client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-analytics">Distill Analytics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="distill.html#distill-models">Distill Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-http-client">Apache Distill HTTP Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-analytics">Apache Distill Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="distill.html#apache-distill-models">Apache Distill Models</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Brew Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-distill.models.stout">Stout Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-distill.models.userale">UserAle Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="distill.html#distill-utilities">Distill Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distill.html#apache-distill-utilities">Apache Distill Utilities</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Distill Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Apache Distill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -233,7 +234,7 @@ an registered application.</p>
 
 <dl class="staticmethod">
 <dt id="distill.models.brew.Brew.read">
-<em class="property">static </em><code class="descname">read</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.read" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">read</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.brew.Brew.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch meta data associated with an application</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>Example:
 <span class="o">{</span>
@@ -352,9 +353,10 @@ distill.algorithms.stats and distill.algorithms.graphs module.</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="distill.models.userale.UserAle.select">
-<em class="property">static </em><code class="descname">select</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.select" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="distill.models.userale.UserAle.segment">
+<em class="property">static </em><code class="descname">segment</code><span class="sig-paren">(</span><em>app</em>, <em>app_type=None</em>, <em>params=''</em><span class="sig-paren">)</span><a class="headerlink" href="#distill.models.userale.UserAle.segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just support match all for now.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -389,7 +391,7 @@ distill.algorithms.stats and distill.algorithms.graphs module.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, The Charles Stark Draper Laboratory Licensed under Apache Software License..
+        &copy; Copyright 2016, Apache Software License.
 
     </p>
   </div>
@@ -411,7 +413,7 @@ distill.algorithms.stats and distill.algorithms.graphs module.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0 alpha',
+            VERSION:'0.1.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
